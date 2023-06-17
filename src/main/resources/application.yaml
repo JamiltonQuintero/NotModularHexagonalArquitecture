@@ -1,0 +1,27 @@
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        username: sa
+        url: jdbc:h2:mem:~/youtube
+        platform: h2
+        password: ''
+    h2:
+        console:
+            enabled: true
+            settings:
+                web-allow-others: true
+                trace: false
+            path: /h2-console
+            allowed-origins: "*"
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+
+server:
+    port: 8086
+    servlet:
+        context-path: /youtube
+        session:
+            timeout: 21600s
